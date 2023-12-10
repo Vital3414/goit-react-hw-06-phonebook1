@@ -28,10 +28,12 @@ export const contactsSlice = createSlice({
   initialState: initialState.contacts,
   reducers: {
     addContact: (state, action) => {
-      return {
-        ...state,
-        contacts: [...state.contacts, { ...action.payload }],
-      };
+      if (!Array.isArray(state.contacts)) {
+        state.contacts = [];
+      }
+      const updatedContacts = [...state.contacts, { ...action.payload }];
+      state.contacts = updatedContacts;
+      return state;
     },
     deleteContact: (state, action) => ({
       ...state,
