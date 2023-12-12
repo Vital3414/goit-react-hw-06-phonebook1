@@ -7,15 +7,12 @@ export default function ContactList() {
   const contacts = useSelector(getContacts);
   const filterValue = useSelector(getFilter);
 
-  const filteredContacts =
-    Array.isArray(contacts) && filterValue
-      ? contacts.filter(
-          contact =>
-            contact?.name &&
-            contact?.number &&
-            contact.name.toLowerCase().includes(filterValue.toLowerCase())
-        )
-      : [];
+  const filteredContacts = contacts.filter(
+    contact =>
+      contact?.name &&
+      contact?.number &&
+      contact.name.toLowerCase().includes(filterValue.toLowerCase())
+  );
 
   const dispatch = useDispatch();
 
