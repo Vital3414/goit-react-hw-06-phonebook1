@@ -14,6 +14,10 @@ export default function ContactList() {
       contact.name.toLowerCase().includes(filterValue.toLowerCase())
   );
 
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filterValue.toLowerCase())
+  // );
+
   const dispatch = useDispatch();
 
   const handleDeleteContact = contactId => {
