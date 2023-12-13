@@ -6,7 +6,7 @@ const filterSlice = createSlice({
   initialState: initialState.filter,
   reducers: {
     filtered(state, action) {
-      return action.payload;
+      state.filterValue = action.payload;
     },
   },
 });

@@ -5,7 +5,7 @@ import { addContact } from '../../redux/contacts/contactSlice';
 import { getContacts } from '../../redux/contacts/getState';
 
 export default function ContactForm() {
-  const { contacts } = useSelector(getContacts);
+  const contacts = useSelector(getContacts);
 
   const dispatch = useDispatch();
 
